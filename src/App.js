@@ -3,7 +3,14 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import $ from "jquery";
 import plus from "./plus.svg";
-
+import ItemFood from "./item-food";
+const arr = [
+  { name: "قیمه مکزیکی", price: "20000", id: 1 },
+  { name: "قیمه مکزیکی", price: "30000", id: 2 },
+  { name: "قیمه مکزیکی", price: "40000", id: 3 },
+  { name: "قیمه مکزیکی", price: "55000", id: 4 },
+  { name: "قیمه مکزیکی", price: "25000", id: 5 },
+];
 function App() {
   return (
     <div className="row justify-content-center p-0 m-0">
@@ -14,7 +21,11 @@ function App() {
         >
           رستوران مک‌دونالد شعبه کامرانیه
         </div>
-        <div id="box-item"></div>
+        <div id="box-item">
+          {arr.map((item) => {
+            return <ItemFood price={item.price} name={item.name} />;
+          })}
+        </div>
         <div id="box-calc">
           <div className="row align-items-end h-100 p-0 m-0">
             <div className="col-6">
