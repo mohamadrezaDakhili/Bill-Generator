@@ -8,7 +8,7 @@ body {
 /* fonts */
 @font-face {
   font-family: "yekanbakh-bold";
-  src: url("./fonts/Yekan-Bakh-EN-Bold.ttf");
+  src: url("./fonts/Shabnam-Bold-FD.ttf");
 }
 
 #box-bill {
@@ -31,11 +31,47 @@ body {
 }
 #box-calc {
   height: 219px;
-  background-color: blue;
-  box-shadow: 0px -10px rgba(255, 255, 255, 0), 0 6px 20px 0 #f4f4f4;
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.082);
 }
-#test {
+#lauout-calc {
   color: rgba(0, 0, 0, 0.71);
   font-size: 16.4;
   font-family: "yekanbakh-bold";
+}
+#button {
+  width: 280px;
+  height: 67px;
+  border-radius: 11.7px;
+  background-color: #e67e22;
+  font-family: "yekanbakh-bold";
+  font-size: 29.3px;
+  color: white;
+  border: none;
+}
+#discount-code {
+  width: 280px;
+  height: 45px;
+  border-radius: 22.8px;
+  border: 1.2px solid #e67e22;
+  background-color: transparent;
+  color: rgba(31, 31, 31, 0.71);
+  outline: 0;
+  text-align: center;
+  font-size: 20px;
+  font-family: "yekanbakh-bold";
+}
+#discount-code::placeholder {
+  color: #f39c12;
+}
+#btn-discount-code {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #f39c12;
+  left: 20px;
+  top: 19px;
+}
+#total-price {
+  font-size: 36px;
 }

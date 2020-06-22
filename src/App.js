@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import $ from "jquery";
+import plus from "./plus.svg";
 
 function App() {
   return (
@@ -15,31 +16,53 @@ function App() {
         </div>
         <div id="box-item"></div>
         <div id="box-calc">
-          <div className="row p-0 m-0">
-            <div className="col-6 bg-danger">dg</div>
+          <div className="row align-items-end h-100 p-0 m-0">
             <div className="col-6">
-              <div id="test" className="row">
-                <div className="col-12 bg-dark">
-                  <div class="row justify-content-between">
+              <div class="row">
+                <div className="col-12">
+                  <div class="row justify-content-center position-relative p-3">
+                    <input
+                      id="discount-code"
+                      type="text"
+                      placeholder="کد تخفیف"
+                    ></input>
+                    <div id="btn-discount-code">
+                      <div class="row h-100 justify-content-center ">
+                        <img src={plus} alt="plus" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-12">
+                  <div class="row justify-content-center p-3 mb-2">
+                    <button id="button">ثبت سفارش</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-6">
+              <div id="lauout-calc" className="row">
+                <div className="col-12">
+                  <div class="row justify-content-between p-2">
                     <span>820/900تومان</span>
                     <span>جمع کل سفارشات</span>
                   </div>
                 </div>
-                <div className="col-12 bg-warning">
-                  <div class="row justify-content-between">
+                <div className="col-12">
+                  <div class="row justify-content-between p-2">
                     <span>20/500تومان</span>
                     <span>حق سرویس و کارمزد</span>
                   </div>
                 </div>
-                <div className="col-12 bg-primary">
-                  <div class="row justify-content-between">
+                <div className="col-12">
+                  <div class="row justify-content-between p-2">
                     <span>34/000تومان</span>
                     <span>تخفیف</span>
                   </div>
                 </div>
-                <div className="col-12 bg-secondary">
-                  <div class="row justify-content-center">
-                    <span>894/450 تومان</span>
+                <div className="col-12">
+                  <div class="row justify-content-center p-3 mb-2">
+                    <span id="total-price">894/450 تومان</span>
                   </div>
                 </div>
               </div>
