@@ -102,3 +102,32 @@ body {
   color: black;
   font-family: "yekanbakh-bold";
 }
+
+.count {
+  width: 30px;
+  text-align: center;
+  border: none;
+}
+.minus {
+  background-color: #f39c12;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.226);
+}
+.minus:active {
+  box-shadow: 0px 0px;
+}
+
+.plus {
+  background-color: #f39c12;
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.226);
+}
+.plus:active {
+  box-shadow: 0px 0px;
+}
