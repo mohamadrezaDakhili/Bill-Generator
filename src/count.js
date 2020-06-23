@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-function Count() {
+function Count(props) {
   const [value, setValue] = useState(0);
   function plus() {
     setValue(value + 1);
@@ -16,6 +16,7 @@ function Count() {
       setValue(0);
     }
   }
+  props.setInputVal(value);
 
   return (
     <div className="col-6">

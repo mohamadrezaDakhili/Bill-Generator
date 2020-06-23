@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import imgFood from "./img-food.png";
 // import $ from "jquery";
 import Count from "./count";
+import TotalPrice from "./total-price";
 
 function ItemFood(props) {
+  const [inputVal, setInputVal] = useState(0);
+
   return (
     <div className="px-4 py-2">
       <div id="box-item-food" className="row align-items-end p-1 m-0">
@@ -18,8 +21,8 @@ function ItemFood(props) {
             </div>
             <div className="col-12">
               <div className="row justify-content-between txt-price">
-                <div className="col-6 bg-danger">sdgsdf</div>
-                <Count />
+                <TotalPrice inputVal={inputVal} price={props.price} />
+                <Count setInputVal={setInputVal} />
               </div>
             </div>
           </div>
