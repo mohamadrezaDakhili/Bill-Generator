@@ -6,12 +6,14 @@ import ItemFood from "./item-food";
 
 const App = () => {
   const [arr, setArr] = React.useState([
-    { name: "قیمه مکزیکی", price: "20000", id: 1, order: 0 },
-    { name: "فسنجون", price: "30000", id: 2, order: 0 },
-    { name: "کباب کوبیده", price: "40000", id: 3, order: 0 },
-    { name: "جوجه کباب", price: "55000", id: 4, order: 0 },
-    { name: "جوجه ترش", price: "25000", id: 5, order: 0 },
+    { name: "قیمه مکزیکی", price: "20000", id: 1, order: 0, total: 0 },
+    { name: "فسنجون", price: "30000", id: 2, order: 0, total: 0 },
+    { name: "کباب کوبیده", price: "40000", id: 3, order: 0, total: 0 },
+    { name: "جوجه کباب", price: "55000", id: 4, order: 0, total: 0 },
+    { name: "جوجه ترش", price: "25000", id: 5, order: 0, total: 0 },
   ]);
+
+  console.log(arr);
 
   return (
     <div className="row justify-content-center p-0 m-0">
