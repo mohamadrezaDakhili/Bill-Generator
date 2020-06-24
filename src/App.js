@@ -3,14 +3,16 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import plus from "./plus.svg";
 import ItemFood from "./item-food";
-const arr = [
-  { name: "قیمه مکزیکی", price: "20000", id: 1 },
-  { name: "فسنجون", price: "30000", id: 2 },
-  { name: "کباب کوبیده", price: "40000", id: 3 },
-  { name: "جوجه کباب", price: "55000", id: 4 },
-  { name: "جوجه ترش", price: "25000", id: 5 },
-];
-function App() {
+
+const App = () => {
+  const [arr, setArr] = React.useState([
+    { name: "قیمه مکزیکی", price: "20000", id: 1, order: 0 },
+    { name: "فسنجون", price: "30000", id: 2, order: 0 },
+    { name: "کباب کوبیده", price: "40000", id: 3, order: 0 },
+    { name: "جوجه کباب", price: "55000", id: 4, order: 0 },
+    { name: "جوجه ترش", price: "25000", id: 5, order: 0 },
+  ]);
+
   return (
     <div className="row justify-content-center p-0 m-0">
       <div id="box-bill">
@@ -21,13 +23,15 @@ function App() {
           رستوران مک‌دونالد شعبه کامرانیه
         </div>
         <div id="box-item">
-          {arr.map((item, index) => {
+          {arr.map((item, index, array) => {
             return (
               <ItemFood
+                arr={array}
+                setArr={setArr}
                 key={index}
-                price={item.price}
-                name={item.name}
-                id={item.id}
+                // setTotalBill={setTotalBill}
+                // totalBill={totalBill}
+                {...item}
               />
             );
           })}
@@ -61,7 +65,7 @@ function App() {
               <div id="lauout-calc" className="row">
                 <div className="col-12">
                   <div className="row justify-content-between p-2">
-                    <span>820/900تومان</span>
+                    <span>تومان</span>
                     <span>جمع کل سفارشات</span>
                   </div>
                 </div>
@@ -89,6 +93,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
