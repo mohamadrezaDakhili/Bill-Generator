@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import plus from "./plus.svg";
 import ItemFood from "./item-food";
+import Discount from "./discount-code";
 
 const App = () => {
+  const [amount, setAmount] = React.useState(0);
   const [arr, setArr] = React.useState([
     { name: "قیمه مکزیکی", price: "20000", id: 1, order: 0, total: 0 },
     { name: "فسنجون", price: "30000", id: 2, order: 0, total: 0 },
@@ -14,7 +15,6 @@ const App = () => {
   ]);
 
   const totalPrice = arr.reduce((acc, item) => acc + item.total, 0);
-
   const percentage = (totalPrice * 9) / 100;
 
   return (
@@ -37,20 +37,7 @@ const App = () => {
           <div className="row align-items-end h-100 p-0 m-0">
             <div className="col-6">
               <div className="row">
-                <div className="col-12">
-                  <div className="row justify-content-center position-relative p-3">
-                    <input
-                      id="discount-code"
-                      type="text"
-                      placeholder="کد تخفیف"
-                    ></input>
-                    <div id="btn-discount-code">
-                      <div className="row h-100 justify-content-center ">
-                        <img src={plus} alt="plus" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <Discount setAmount={setAmount} />
                 <div className="col-12">
                   <div className="row justify-content-center p-3 mb-2">
                     <button id="button">ثبت سفارش</button>
@@ -74,7 +61,7 @@ const App = () => {
                 </div>
                 <div className="col-12">
                   <div className="row justify-content-between p-2">
-                    <span>34/000تومان</span>
+                    <span>{amount}</span>
                     <span>تخفیف</span>
                   </div>
                 </div>

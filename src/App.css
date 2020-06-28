@@ -65,7 +65,7 @@ body {
   height: 45px;
   border-radius: 22.8px;
   border: 1.2px solid #e67e22;
-  background-color: transparent;
+  /* background-color: transparent; */
   color: rgba(31, 31, 31, 0.71);
   outline: 0;
   text-align: center;
