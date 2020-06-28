@@ -13,7 +13,9 @@ const App = () => {
     { name: "جوجه ترش", price: "25000", id: 5, order: 0, total: 0 },
   ]);
 
-  console.log(arr);
+  const totalPrice = arr.reduce((acc, item) => acc + item.total, 0);
+
+  const percentage = (totalPrice * 9) / 100;
 
   return (
     <div className="row justify-content-center p-0 m-0">
@@ -27,14 +29,7 @@ const App = () => {
         <div id="box-item">
           {arr.map((item, index, array) => {
             return (
-              <ItemFood
-                arr={array}
-                setArr={setArr}
-                key={index}
-                // setTotalBill={setTotalBill}
-                // totalBill={totalBill}
-                {...item}
-              />
+              <ItemFood arr={array} setArr={setArr} key={index} {...item} />
             );
           })}
         </div>
@@ -67,13 +62,13 @@ const App = () => {
               <div id="lauout-calc" className="row">
                 <div className="col-12">
                   <div className="row justify-content-between p-2">
-                    <span>تومان</span>
+                    <span>تومان{totalPrice}</span>
                     <span>جمع کل سفارشات</span>
                   </div>
                 </div>
                 <div className="col-12">
                   <div className="row justify-content-between p-2">
-                    <span>20/500تومان</span>
+                    <span>{percentage} تومان</span>
                     <span>حق سرویس و کارمزد</span>
                   </div>
                 </div>

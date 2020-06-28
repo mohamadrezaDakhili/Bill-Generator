@@ -2,15 +2,6 @@ import React from "react";
 import "./App.css";
 
 function ItemTotalPrice(props) {
-  function onTotalPrice() {
-    props.setArr(
-      props.arr.map((item) =>
-        item.id === props.id
-          ? { ...item, total: props.order * props.price }
-          : item
-      )
-    );
-  }
   function onMinus() {
     props.setArr(
       props.arr.map((item) =>
@@ -24,7 +15,6 @@ function ItemTotalPrice(props) {
       )
     );
   }
-
   function onPlus() {
     props.setArr(
       props.arr.map((item) =>
@@ -38,7 +28,6 @@ function ItemTotalPrice(props) {
       )
     );
   }
-
   return (
     <div className="col-12">
       <div className="row justify-content-between txt-price">
